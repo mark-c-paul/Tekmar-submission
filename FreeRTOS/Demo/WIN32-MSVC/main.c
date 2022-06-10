@@ -30,10 +30,11 @@ static BaseType_t xTraceRunning = pdTRUE;
 /*--------------------------------------------------------------------------------------------------*/
 /* My code starts here                                                                              */
 /*--------------------------------------------------------------------------------------------------*/
-SemaphoreHandle_t xSemaphore;
+
 TaskHandle_t populateArrayTaskHandle = NULL;
 TaskHandle_t searchArrayTaskHandle = NULL;
-int array[256];
+static int array[256];
+static SemaphoreHandle_t xSemaphore;
 
 //function populates the array with integers 0 through 255 representing ascii values 
 void populateArray()
